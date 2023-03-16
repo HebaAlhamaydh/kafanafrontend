@@ -11,7 +11,7 @@ export const getAllActiveDeals = createAsyncThunk(
     const { rejectWithValue } = thunkApi;
 
     try {
-      let response = await axios.get(`http://localhost:3030/deal`, {
+      let response = await axios.get(`https://kafana-backend-production-e33d.up.railway.app/deal`, {
         headers: {
           authorization: `Bearer ${cookie.load("token")}`,
         },
@@ -30,7 +30,7 @@ export const getAllDeals = createAsyncThunk(
     const { rejectWithValue } = thunkApi;
 
     try {
-      let response = await axios.get(`http://localhost:3030/allDealAdmin`, {
+      let response = await axios.get(`https://kafana-backend-production-e33d.up.railway.app/allDealAdmin`, {
         headers: {
           authorization: `Bearer ${cookie.load("token")}`,
         },
@@ -48,7 +48,7 @@ export const addDeal = createAsyncThunk(
   async (arg, thunkApi) => {
     const { rejectWithValue } = thunkApi;
     try {
-      const req = await axios.post(`http://localhost:3030/createDeal`, arg, {
+      const req = await axios.post(`https://kafana-backend-production-e33d.up.railway.app/createDeal`, arg, {
         headers: {
           authorization: `Bearer ${cookie.load("token")}`,
         },
@@ -67,7 +67,7 @@ export const updateDeal = createAsyncThunk(
     const { rejectWithValue, dispatch } = thunkApi;
     try {
       const res = await axios.put(
-        `http://localhost:3030/allDealAdmin/${data.id}`,
+        `https://kafana-backend-production-e33d.up.railway.app/allDealAdmin/${data.id}`,
         data,
         {
           headers: {

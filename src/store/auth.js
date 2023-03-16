@@ -12,7 +12,7 @@ export const signin = createAsyncThunk("auth/signin", async (data, thunkApi) => 
   const { rejectWithValue } = thunkApi;
   try {
     const request = await axios.post(
-      `http://localhost:3030/signin`,
+      `https://kafana-backend-production-e33d.up.railway.app/signin`,
       {},
       {
         headers: {
@@ -31,7 +31,7 @@ export const signin = createAsyncThunk("auth/signin", async (data, thunkApi) => 
 export const signup = createAsyncThunk("auth/signup", async (data, thunkApi) => {
   const { rejectWithValue } = thunkApi;
   try {
-    const request = await axios.post(`http://localhost:3030/signup`, data);
+    const request = await axios.post(`https://kafana-backend-production-e33d.up.railway.app/signup`, data);
     return request.data;
   } catch (err) {
     return rejectWithValue(err.message);

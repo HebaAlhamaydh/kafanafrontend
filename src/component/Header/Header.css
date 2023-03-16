@@ -482,8 +482,9 @@ filter {
 
 
 a {
-  color: #2b2d42;
+  color: white ;
   font-weight: 500;
+  text-decoration: none ;
   -webkit-transition: 0.2s color;
   transition: 0.2s color;
 }

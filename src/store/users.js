@@ -8,7 +8,7 @@ const url = process.env.REACT_APP_URL;
 export const getAllUser = createAsyncThunk("users/getAllUser", async (id, thunkApi) => {
   const { rejectWithValue } = thunkApi;
   try {
-    let response = await axios.get(`http://localhost:3030/admin/users`, {
+    let response = await axios.get(`https://kafana-backend-production-e33d.up.railway.app/admin/users`, {
       headers: {
         authorization: `Bearer ${cookie.load("token")}`,
       },
@@ -27,7 +27,7 @@ export const updateUser= createAsyncThunk(
     const { rejectWithValue, dispatch } = thunkApi;
     try {
       const res = await axios.put(
-        `http://localhost:3030/updateStatus/${data.id}`,
+        `https://kafana-backend-production-e33d.up.railway.app/updateStatus/${data.id}`,
         data,
         {
           headers: {
@@ -47,7 +47,7 @@ export const deleteUser = createAsyncThunk("users/deleteUser", async (data, thun
   const { rejectWithValue, dispatch } = thunkApi;
   try {
     console.log({data})
-    let response = await axios.delete(`http://localhost:3030/admin/deletUser`,
+    let response = await axios.delete(`https://kafana-backend-production-e33d.up.railway.app/admin/deletUser`,
       {
         headers: {
           authorization: `Bearer ${cookie.load("token")}`,
@@ -70,7 +70,7 @@ export const deleteUser = createAsyncThunk("users/deleteUser", async (data, thun
 export const addUser = createAsyncThunk("users/addUser", async (arg, thunkApi) => {
   const { rejectWithValue } = thunkApi;
   try {
-    const req = await axios.post(`http://localhost:3030/admin/addUser`, arg, {
+    const req = await axios.post(`https://kafana-backend-production-e33d.up.railway.app/admin/addUser`, arg, {
       headers: {
         authorization: `Bearer ${cookie.load("token")}`,
       },
@@ -85,7 +85,7 @@ export const addUser = createAsyncThunk("users/addUser", async (arg, thunkApi) =
 export const getOneUser = createAsyncThunk("users/getOneUser", async (id, thunkApi) => {
   const { rejectWithValue } = thunkApi;
   try {
-    let response = await axios.get(`http://localhost:3030/profile/user`, {
+    let response = await axios.get(`https://kafana-backend-production-e33d.up.railway.app/profile/user`, {
       headers: {
         authorization: `Bearer ${cookie.load("token")}`,
       },

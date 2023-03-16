@@ -20,6 +20,7 @@ export default function UserProfile() {
 
   useEffect(() => {
     dispatch(getOneUser());
+    dispatch(getMyClaimedDeals());
   }, [ dispatch]);
 
 
@@ -39,15 +40,11 @@ export default function UserProfile() {
           <TableRow>
          
             <TableCell>username</TableCell>
-            <TableCell>Photo</TableCell>
-            <TableCell align="right">server_DateTime</TableCell>
-            <TableCell align="right">dateTime_UTC</TableCell>
-            <TableCell align="right"> Update_DateTime_UTC</TableCell>
-            <TableCell align="right"> Last_Login_DateTime_UTC</TableCell>
-            <TableCell align="right">date_Of_Birth</TableCell>
+            {/* <TableCell>Photo</TableCell> */}
+  
             <TableCell align="right">phone</TableCell>
             <TableCell align="right"> gender</TableCell>
-            <TableCell align="right"> status</TableCell>
+         
             <TableCell align="right"> email</TableCell>
           </TableRow>
         </TableHead>
@@ -56,15 +53,11 @@ export default function UserProfile() {
               sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
             >
               <TableCell component="th" scope="row">{userInfo.username}</TableCell>
-              <TableCell component="th" scope="row">{userInfo.photo_url}</TableCell>
-              <TableCell align="right">{userInfo.server_DateTime}</TableCell>
-              <TableCell align="right">{userInfo.dateTime_UTC}</TableCell>
-              <TableCell align="right">{userInfo.Update_DateTime_UTC}</TableCell>
-              <TableCell align="right">{userInfo.Last_Login_DateTime_UTC}</TableCell>
-              <TableCell align="right">{userInfo.date_Of_Birth}</TableCell>
+             
+         
               <TableCell align="right">{userInfo.phone}</TableCell>
               <TableCell align="right">{userInfo.gender}</TableCell>
-              <TableCell align="right">{userInfo.status}</TableCell>
+       
               <TableCell align="right">{userInfo.email}</TableCell>
             </TableRow>
        

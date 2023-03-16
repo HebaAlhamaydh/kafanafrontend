@@ -32,7 +32,7 @@ export default function Signup(props) {
       email: emailRef.current.value,
       password: passwordRef.current.value,
       gender: genderRef.current.value,
-      phoneNumber: phoneNumberRef.current.value,
+      phone: phoneNumberRef.current.value,
       photo_url: photoRef.current.value,
     };
 
@@ -42,7 +42,7 @@ export default function Signup(props) {
     passwordRef.current.value = null;
     genderRef.current.value = null;
     phoneNumberRef.current.value = null;
-    photoRef.current.value = null;
+    // photoRef.current.value = null;
     navigate("/signin");
   };
   return (
@@ -81,10 +81,10 @@ export default function Signup(props) {
             <label>Phone number</label>
           </div>
 
-          <div className="input-group">
+          {/* <div className="input-group">
             <input type="text" name="loginUser" id="loginUser" maxLength={20} ref={photoRef} required />
             <label>photo</label>
-          </div>
+          </div> */}
 
           <div className="input-group">
             <input type="password" name="loginUser" id="loginUser" ref={passwordRef} required />

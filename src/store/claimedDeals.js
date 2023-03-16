@@ -9,7 +9,7 @@ const url = process.env.REACT_APP_URL;
 export const sendDeals= createAsyncThunk("claimed/sendDeals", async (data, thunkApi) => {
   const { rejectWithValue } = thunkApi;
   try {
-    const req = await axios.post(`http://localhost:3030/userClaimedDeals`, data, {
+    const req = await axios.post(`https://kafana-backend-production-e33d.up.railway.app/userClaimedDeals`, data, {
       headers: {
         authorization: `Bearer ${cookie.load("token")}`,
       },
@@ -24,7 +24,7 @@ export const sendDeals= createAsyncThunk("claimed/sendDeals", async (data, thunk
 export const getMyClaimedDeals = createAsyncThunk("claimed/getMyClaimedDeals", async (data, thunkApi) => {
   const { rejectWithValue } = thunkApi;
   try {
-    let response = await axios.get(`http://localhost:3030/userClaimedDeals`, {
+    let response = await axios.get(`https://kafana-backend-production-e33d.up.railway.app/userClaimedDeals`, {
       headers: {
         authorization: `Bearer ${cookie.load("token")}`,
       },
@@ -41,7 +41,7 @@ export const deleteClaimedDeals = createAsyncThunk(
   async (id, thunkApi) => {
     const { rejectWithValue, dispatch } = thunkApi;
     try {
-      let response = await axios.delete(`http://localhost:3030/userdeleteClaimedDeals/${id}`, {
+      let response = await axios.delete(`https://kafana-backend-production-e33d.up.railway.app/userdeleteClaimedDeals/${id}`, {
         headers: {
           authorization: `Bearer ${cookie.load("token")}`,
         },
@@ -61,7 +61,7 @@ export const getAllClaimedDeals = createAsyncThunk(
     const { rejectWithValue } = thunkApi;
 
     try {
-      let response = await axios.get(`http://localhost:3030/admin/allClaimedDeals`, {
+      let response = await axios.get(`https://kafana-backend-production-e33d.up.railway.app/admin/allClaimedDeals`, {
         headers: {
           authorization: `Bearer ${cookie.load("token")}`,
         },
@@ -76,7 +76,7 @@ export const getAllClaimedDeals = createAsyncThunk(
 export const getUserClaimedDeal = createAsyncThunk("claimed/getUserClaimedDeal", async (userId, thunkApi) => {
   const { rejectWithValue } = thunkApi;
   try {
-    const req = await axios.get(`http://localhost:3030/admin/byUserId/${userId}`,  {
+    const req = await axios.get(`https://kafana-backend-production-e33d.up.railway.app/admin/byUserId/${userId}`,  {
       headers: {
         authorization: `Bearer ${cookie.load("token")}`,
       },

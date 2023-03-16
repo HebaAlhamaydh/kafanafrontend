@@ -1,7 +1,8 @@
 import React from "react";
 import Logout from "../Auth/Logout/Logout";
 import "./Header.css";
-// import { useDispatch, useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
+import { Button } from "react-bootstrap";
 // import { useEffect } from "react";
 
 // import {getAllActiveDeals,} from "../../store/deals";
@@ -22,7 +23,7 @@ export default function Header(props) {
   //   dispatch(getAllActiveDeals());
   // }, [dispatch]);
 
-  // const { isSignin } = useSelector((state) => state.authSlice);
+  const { isSignin } = useSelector((state) => state.authSlice);
 
   return (
     <>
@@ -79,15 +80,15 @@ export default function Header(props) {
                 </div>
               </div>
             </Access>
-
-         
-       
           </div>
         </div>
-   
+        {isSignin  ? (
         <div className="logout">
           <Logout />
         </div>
+          ) : (
+<Button className="mx-4" variant="dark" ><Link to="/signin">Login</Link></Button>
+            )}
        
       </nav>
 

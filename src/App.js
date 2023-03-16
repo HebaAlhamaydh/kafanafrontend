@@ -4,7 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { ToastContainer } from "react-toastify";
 
-import Navbar from './component/Header/Header';
+import Header from './component/Header/Header';
 
 import Signin from './component/Auth/Signin/Signin';
 import NotFoundPage from './component/NotFound/NotFoundPage';
@@ -27,15 +27,14 @@ function App() {
   const { isSignin } = useSelector((state) => state.authSlice);
   return (
     <>
-    
-   
       {isSignin ? (
         <>
-          <Navbar/>
+          <Header/>
           <ToastContainer />
           <Routes>
             <Route path="/admin/users" element={<Access role={"admin"}> <Users /></Access>}></Route>
-            <Route path="*" element={<NotFoundPage />} />
+            {/* <Route path="*" element={<NotFoundPage />} /> */}
+            {/* <Route path="/" element={<HomePage/>} /> */}
             <Route path="/signin" />
             
             <Route path="/deal" element={<ActiveDeal />} />

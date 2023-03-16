@@ -71,7 +71,8 @@ export default function Users() {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-          <TableCell>   Delete</TableCell>
+          <TableCell>  Delete</TableCell>
+          <TableCell>  id</TableCell>
             <TableCell>username</TableCell>
             <TableCell>Photo</TableCell>
             <TableCell align="right">server_DateTime</TableCell>
@@ -99,8 +100,9 @@ export default function Users() {
             onChange={() => handleCheckboxChange(row.id)}
           />
           </TableCell>
+          <TableCell component="th" scope="row">{row.id}</TableCell>
               <TableCell component="th" scope="row">{row.username}</TableCell>
-              <TableCell component="th" scope="row">{userInfo.photo_url}</TableCell>
+              {/* <TableCell component="th" scope="row">{userInfo.photo_url}</TableCell> */}
               <TableCell align="right">{row.server_DateTime}</TableCell>
               <TableCell align="right">{row.dateTime_UTC}</TableCell>
               <TableCell align="right">{row.Update_DateTime_UTC}</TableCell>
