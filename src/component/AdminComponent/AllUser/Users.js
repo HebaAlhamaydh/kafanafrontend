@@ -102,7 +102,7 @@ export default function Users() {
           </TableCell>
           <TableCell component="th" scope="row">{row.id}</TableCell>
               <TableCell component="th" scope="row">{row.username}</TableCell>
-              {/* <TableCell component="th" scope="row">{userInfo.photo_url}</TableCell> */}
+              <TableCell component="th" scope="row">{row.photo_url}</TableCell>
               <TableCell align="right">{row.server_DateTime}</TableCell>
               <TableCell align="right">{row.dateTime_UTC}</TableCell>
               <TableCell align="right">{row.Update_DateTime_UTC}</TableCell>

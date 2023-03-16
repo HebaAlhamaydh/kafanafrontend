@@ -40,7 +40,7 @@ export default function UserProfile() {
           <TableRow>
          
             <TableCell>username</TableCell>
-            {/* <TableCell>Photo</TableCell> */}
+            <TableCell>Photo</TableCell>
   
             <TableCell align="right">phone</TableCell>
             <TableCell align="right"> gender</TableCell>
@@ -54,7 +54,7 @@ export default function UserProfile() {
             >
               <TableCell component="th" scope="row">{userInfo.username}</TableCell>
              
-         
+              <TableCell align="right">{userInfo. photo_url}</TableCell>
               <TableCell align="right">{userInfo.phone}</TableCell>
               <TableCell align="right">{userInfo.gender}</TableCell>
        

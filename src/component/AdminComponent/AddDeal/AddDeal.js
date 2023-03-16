@@ -5,13 +5,12 @@ import Modal from "react-bootstrap/Modal";
 import { useDispatch } from "react-redux";
 import { Button } from "react-bootstrap";
 import { addDeal } from "../../../store/deals";
-import axios from "axios";
+
 
 export default function AddDeal({ postData }) {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
-//   const [file, setFile] = useState("");
-//   const [myImage, setMyImage] = useState("");
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const server_dateTimeRef = useRef(null);

@@ -11,14 +11,9 @@ export default function AddUser({ postData }) {
   const dispatch = useDispatch();
   const [show, setShow] = useState(false);
   const [file, setFile] = useState("");
-//   const [addUser, setAddUser] = useState({
-//     username: '',
-//     server_DateTime: null,
-//     dateTime_UTC: null,
-//     Update_DateTime_UTC: null,
-//     image: ''
-//   });
   const [myImage, setMyImage] = useState("");
+
+ 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -47,35 +42,31 @@ export default function AddUser({ postData }) {
         status: statusRef.current.value,
         password: passwordRef.current.value,
         email: emailRef.current.value,
-        // photo_url: " ",
-      // userID: cookie.load("userID"),
+        photo_url:  !myImage
+        ? "https://cdn.pixabay.com/photo/2015/11/03/08/56/service-1019822_960_720.jpg"
+        : myImage,
+    
     };
     console.log(sendData)
 
     dispatch(addUser(sendData));
   };
-  // useEffect(() => {
-  //   if (file) {
-  //     const formData = new FormData();
-  //     formData.append("file", file);
-  //     formData.append("upload_preset", "kpc5yviv");
-  //     axios
-  //       .post("https://api.cloudinary.com/v1_1/dminynjzy/image/upload", formData)
-  //       .then((response) => {
-  //         setMyImage(response.data.secure_url);
-  //       });
-  //     setFile("");
-  //     setMyImage("");
-  //   }
-  // }, [file]);
+  useEffect(() => {
+    if (file) {
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("upload_preset", "12a1y3Z");
+      axios
+        .post("https://api.cloudinary.com/v1_1/dminynjzy/image/upload", formData)
+        .then((response) => {
+          setMyImage(response.data.secure_url);
+        });
+      setFile("");
+      setMyImage("");
+    }
+  }, [file]);
  
-//   const onChange = (e) => {
-//     console.log(e, e.target.value)
-//     setAddUser({
-//         ...addUser,
-//         [e.target.name]: e.target.value
-//     })
-//   }
+
   return (
     <>
       <Button variant="primary" size="lg" onClick={handleShow} className="ms-4 mt-3 add-btn">
@@ -204,7 +195,7 @@ export default function AddUser({ postData }) {
                 </div>
               </div> 
 
-              {/* <div className="add-image">
+              <div className="add-image">
                 <label className="add-image-title"> Image</label>
                 <input
                   type="file"
@@ -213,7 +204,7 @@ export default function AddUser({ postData }) {
                     setFile(event.target.files[0]);
                   }}
                 />
-              </div>  */}
+              </div> 
               
               <br />
               <div className="footer">
